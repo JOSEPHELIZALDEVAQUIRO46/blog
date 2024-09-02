@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h1 class="card-title text-center">{{ post.title }}</h1>
+          <p class="card-subtitle text-muted mb-4">
+            Published on {{ post.publish|date:"F j, Y" }} by {{ post.author }}
+          </p>
+          <div class="card-text">
+            {{ post.body|linebreaks }}
+          </div>
+        </div>
+        <div class="card-footer bg-transparent border-0">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
